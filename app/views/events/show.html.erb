@@ -17,6 +17,11 @@
     <!-- About -->
     <h4>About</h4>
 <p>Description: <%= @event.description %></p>
+<!-- Categories -->
+<h4>Categories</h4>
+<% @categories.each do |category| %>
+  <span class="label label-success"><%= category.name %></span>
+<% end %>
 
 
 
