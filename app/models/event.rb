@@ -5,10 +5,24 @@ validates :name, presence: true
 validates :description, presence: true, length: {maximum: 500}
 validates :starts_at, presence: true
 validates :ends_at, presence: true
-validates :ends_day_after_starts
+validate :ends_day_after_starts
 
-def def ends_day_after_starts
-  errors.add(:ends_at, "must be at least one day after start") if ends_at-starts_at<1
+def ends_day_after_starts
+  if ends_at.to_i < 1*3600*24+starts_at.to_i
+    errors.add(:ends_at, "must be at least one day after start")
+    # puts "not good"
+  # else
+    # puts "ok"
+  end
+
+end
+
+after_initialize do |event|
+  event.price = event.price ? event.price : 0.0
+  event.includes_food=event.includes_food ? event.includes_food : false
+  event.includes_drinks=event.includes_drinks ? event.includes_drinks : false
+  event.starts_at=event.starts_at ? event.starts_at : DateTime.new
+  event.ends_at = event.ends_at ? event.ends_at : DateTime.new+1.day
 end
 
 end
