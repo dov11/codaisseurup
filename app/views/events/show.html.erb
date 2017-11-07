@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @event.name %></div>
+
+  <div class="panel-body">
+
+    <p>Host: <%= @event.user.email %></p>
+    <!-- Main Info -->
+    <h4>Main Info</h4>
+    <p>Takes place: <%= @event.starts_at.strftime("On %d/%m/%Y")%></p>
+    <%if @event.includes_food%>
+    <p>Includes food!</p>
+<%end%>
+    <% if @event.includes_drinks%>
+    <p>Includes drinks!</p>
+    <%end%>
+
+    <!-- About -->
+    <h4>About</h4>
+<p>Description: <%= @event.description %></p>
+
+
+
+  </div>
+
+</div>
+
+<%= link_to "Back", events_path, class: "btn btn-default" %>

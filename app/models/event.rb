@@ -21,8 +21,7 @@ after_initialize do |event|
   event.price = event.price ? event.price : 0.0
   event.includes_food=event.includes_food ? event.includes_food : false
   event.includes_drinks=event.includes_drinks ? event.includes_drinks : false
-  event.starts_at=event.starts_at ? event.starts_at : DateTime.new
-  event.ends_at = event.ends_at ? event.ends_at : DateTime.new+1.day
+  
 end
 
 end

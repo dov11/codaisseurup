@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+
+keanu = User.create!(
+email: "example@gmail.com",
+password: "123456"
+)
+
+Event.create!(
+name: "Matrix shooting",
+description: "Making awesome movie",
+location: "Vancuver",
+price: 1_000_000,
+capacity: 100,
+includes_food: true,
+includes_drinks: true,
+starts_at: DateTime.new(1999,10,2),
+ends_at: DateTime.new(1999,11,4),
+active: true,
+user: keanu
+)
