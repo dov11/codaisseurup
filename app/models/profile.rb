@@ -9,4 +9,8 @@ class Profile < ApplicationRecord
   def self.by_initial(letter)
     where("first_name LIKE ?", "#{letter}%").order(:first_name)
   end
+  # def self.by_letter(letter)
+  #
+  # end
+
 end

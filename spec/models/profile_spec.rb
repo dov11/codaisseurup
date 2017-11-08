@@ -16,13 +16,13 @@ RSpec.describe Profile, type: :model do
       expect(subject).to eq([sander, stefan])
     end
   end
-  describe ".by_letter" do
-    context "matching letters" do
-      it "returns the profiles that match the initial"
-    end
-    
-    context "non-matching letters" do
-      it "does not return profiles that don't start with the given letter"
-    end
-  end
+  # describe ".by_letter" do
+  #   context "matching letters" do
+  #     it "returns the profiles that match the initial"
+  #   end
+  #
+  #   context "non-matching letters" do
+  #     it "does not return profiles that don't start with the given letter"
+  #   end
+  # end
 end
