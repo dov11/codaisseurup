@@ -1,7 +1,7 @@
 <%= form_for @event, html: { multipart: true } do |f| %>
 <% if @event.errors.full_messages.any? %>
   <% @event.errors.full_messages.each do |error_message| %>
-    <div class="alert alert-success" role="alert"><%= error_message if @event.errors.full_messages.first == error_message %> <br /></div>
+    <div class="alert alert-success" role="alert"><%= error_message  %> <br /></div>
   <% end %>
 <% end %>
 
@@ -56,7 +56,7 @@
       <%= file_field_tag "images[]", type: :file, multiple: true %>
     </span>
   </div>
-  
+
   <div id="photos">
   <%= render 'photos/list' %>
 </div>
