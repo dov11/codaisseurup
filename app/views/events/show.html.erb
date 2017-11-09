@@ -9,19 +9,24 @@
     <p>Takes place: <%= @event.starts_at.strftime("On %d/%m/%Y")%></p>
     <%if @event.includes_food%>
     <p>Includes food!</p>
-<%end%>
+    <%end%>
     <% if @event.includes_drinks%>
     <p>Includes drinks!</p>
     <%end%>
 
     <!-- About -->
     <h4>About</h4>
-<p>Description: <%= @event.description %></p>
-<!-- Categories -->
-<h4>Categories</h4>
-<% @categories.each do |category| %>
-  <span class="label label-success"><%= category.name %></span>
-<% end %>
+    <p>Description: <%= @event.description %></p>
+    <!-- Photos -->
+    <h4>Photos</h4>
+    <% @event.photos.each do |photo| %>
+    <%= image_tag photo.image %>
+    <% end %>
+    <!-- Categories -->
+    <h4>Categories</h4>
+    <% @categories.each do |category| %>
+    <span class="label label-success"><%= category.name %></span>
+    <% end %>
 
 
 

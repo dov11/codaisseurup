@@ -1,5 +1,9 @@
+Photo.destroy_all
 Category.destroy_all
+Event.destroy_all
+Profile.destroy_all
 User.destroy_all
+
 
 shooting_a_movie = Category.create!(name: "Shooting a movie")
 partying = Category.create!(name: "Partying")
@@ -14,7 +18,7 @@ email: "rut@gmail.com",
 password: "012345"
 )
 
-Event.create!(
+event1 = Event.create!(
 name: "Matrix shooting",
 description: "Making awesome movie",
 location: "Vancuver",
@@ -28,7 +32,7 @@ active: true,
 user: keanu,
 categories: [shooting_a_movie, partying]
 )
-Event.create!(
+event2 = Event.create!(
 name: "Blade Runner",
 description: "Making awesome movie",
 location: "NY",
@@ -42,3 +46,6 @@ active: true,
 user: rutger,
 categories: [shooting_a_movie]
 )
+
+photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dov11/image/upload/v1510228454/The_Matrix_Poster_sfosra.jpg", event: event1)
+photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dov11/image/upload/v1510228454/Blade_Runner_poster_vcdd7r.jpg", event: event2)
