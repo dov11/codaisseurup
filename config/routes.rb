@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :events
   resources :profiles, only: [:new, :edit, :create, :update]
-
+  resources :photos, only: [:destroy]
   get "about" => "pages#about"
   get "tc" => "pages#tc"
   get "categories" => "categories#show"
