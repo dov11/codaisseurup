@@ -16,6 +16,7 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'devise', '~> 4.2'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
+gem 'carrierwave', '0.11.2'
 
 gem 'rails_12factor', group: :production
 group :development, :test do
