@@ -1,6 +1,6 @@
 <h1><%=@category.name%></h1>
 <%@events.each do |event|%>
-<p> <%=event.name%></p>
+<p> <%= link_to event.name, event, class: "btn btn-default" %></p>
 <%end%>
 
 <%= link_to "Back", root_path, class: "btn btn-default" %>

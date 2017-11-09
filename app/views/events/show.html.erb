@@ -34,4 +34,4 @@
 
 </div>
 
-<%= link_to "Back", events_path, class: "btn btn-default" %>
+<%= link_to "Back", user_signed_in? ? ((current_user.id == @event.user.id) ? events_path : root_path): root_path, class: "btn btn-default" %>
