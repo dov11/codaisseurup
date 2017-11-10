@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :events
   resources :profiles, only: [:new, :edit, :create, :update]
   resources :photos, only: [:destroy]
+  resources :reservations, only: [:create]
   get "about" => "pages#about"
   get "tc" => "pages#tc"
   get "categories" => "categories#show"
