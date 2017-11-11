@@ -1,3 +1,4 @@
+Reservation.destroy_all
 Photo.destroy_all
 Category.destroy_all
 Event.destroy_all
@@ -49,3 +50,6 @@ categories: [shooting_a_movie]
 
 photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dov11/image/upload/v1510228454/The_Matrix_Poster_sfosra.jpg", event: event1)
 photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dov11/image/upload/v1510228454/Blade_Runner_poster_vcdd7r.jpg", event: event2)
+
+Reservation.create!(event: event1, user: rutger, status: true, price: 49.9, guests_count: 2)
+Reservation.create!(event: event2, user: keanu, status: true, price: 45.9, guests_count: 3)

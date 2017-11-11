@@ -18,4 +18,17 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "association with reservation" do
+  let(:guest_user) { create :user, email: "guest@user.com" }
+  let(:host_user) { create :user, email: "host@user.com" }
+
+  let!(:event) { create :event, user: host_user }
+  let!(:reservation) { create :reservation, event: event, user: guest_user }
+
+  it "has reservations" do
+    expect(guest_user.reserved_events).to include(event)
+  end
+end
+
+
 end
