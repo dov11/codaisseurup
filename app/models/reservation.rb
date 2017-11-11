@@ -10,4 +10,8 @@ class Reservation < ApplicationRecord
       errors.add(:guests_count, "must be blow 4")
     end
   end
+
+  def set_price
+    self.price = event.price*guests_count
+  end
 end

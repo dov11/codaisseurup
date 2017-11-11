@@ -27,7 +27,16 @@
     <% @categories.each do |category| %>
     <span class="label label-success"><%= category.name %></span>
     <% end %>
+<!--Attending form-->
+    <% if current_user != @event.user %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">Attend this event</div>
 
+        <div class="panel-body">
+          <%= render 'reservations/form' %>
+        </div>
+      </div>
+    <% end %>
 
 
   </div>

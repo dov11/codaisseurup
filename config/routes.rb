@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
-  resources :events
+  resources :events do
+    resources :reservations, only: [:create]
+  end
   resources :profiles, only: [:new, :edit, :create, :update]
   resources :photos, only: [:destroy]
-  resources :reservations, only: [:create]
   get "about" => "pages#about"
   get "tc" => "pages#tc"
   get "categories" => "categories#show"
