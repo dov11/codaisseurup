@@ -1,5 +1,4 @@
-class Api::ReservationsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+class Api::ReservationsController < Api::BaseController
   before_action :set_event
 
   def create

@@ -7,6 +7,7 @@ has_one :profile
 has_many :events, dependent: :destroy
 has_many :reservations, dependent: :destroy
 has_many :reserved_events, through: :reservations, source: :event
+has_secure_token
 
 def has_profile?
   profile.present?&&profile.persisted?
