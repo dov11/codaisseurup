@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "categories" => "categories#show"
 
   namespace :api do
-    resources :events
+    resources :events do
+      resources :reservations, only: [:create, :update, :destroy]
+    end
   end
 end

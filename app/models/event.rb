@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_and_belongs_to_many :categories
   has_many :photos
   has_many :reservations, dependent: :destroy
@@ -37,7 +37,7 @@ class Event < ApplicationRecord
   scope :published, -> { where(active: true)}
 
   # scope :available, -> (arrival, departure) { where('starts_at< ? AND ends_at> ?', arrival, departure )}
-  # 
+  #
   # def self.booked_event_id_during(arrival, departure)
   #   overlapping(arrival, departure).pluck(:event_id)
   # end
