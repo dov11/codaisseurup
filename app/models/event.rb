@@ -32,8 +32,18 @@ class Event < ApplicationRecord
     price < 30
   end
 
-  def self.order_by_price
-    order :price
-  end
+  scope :order_by_name, -> { order(name: :asc)}
+
+  scope :published, -> { where(active: true)}
+
+  # scope :available, -> (arrival, departure) { where('starts_at< ? AND ends_at> ?', arrival, departure )}
+  # 
+  # def self.booked_event_id_during(arrival, departure)
+  #   overlapping(arrival, departure).pluck(:event_id)
+  # end
+
+  # def self.available?(arrival, departure)
+  #   where.not(id: Reservation.)
+  # end
 
 end
